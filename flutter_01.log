@@ -1,0 +1,87 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build bundle --suppress-analytics --target C:\Users\Dorivaldo Dos Santos\africult\lib\main.dart --filesystem-scheme org-dartlang-root --track-widget-creation --compilation-trace-file compilation.txt --depfile C:\Users\Dorivaldo Dos Santos\africult\build\app\intermediates\flutter\debug/snapshot_blob.bin.d --asset-dir C:\Users\Dorivaldo Dos Santos\africult\build\app\intermediates\flutter\debug/flutter_assets --debug
+
+## exception
+
+VersionCheckError: VersionCheckError: Command exited with code 1: git log -n 1 --pretty=format:%ad --date=iso
+Standard error: error launching git: O arquivo já está sendo usado por outro processo.
+
+
+```
+#0      _runSync (package:flutter_tools/src/version.dart:506:5)
+#1      FlutterVersion._latestGitCommitDate (package:flutter_tools/src/version.dart:130:12)
+#2      FlutterVersion.frameworkCommitDate (package:flutter_tools/src/version.dart:121:37)
+#3      FlutterVersion.checkFlutterVersionFreshness (package:flutter_tools/src/version.dart:273:62)
+<asynchronous suspension>
+#4      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:372:41)
+<asynchronous suspension>
+#5      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#6      _rootRun (dart:async/zone.dart:1124:13)
+#7      _CustomZone.run (dart:async/zone.dart:1021:19)
+#8      _runZoned (dart:async/zone.dart:1516:10)
+#9      runZoned (dart:async/zone.dart:1463:12)
+#10     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#11     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:356:19)
+<asynchronous suspension>
+#12     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:111:29)
+#13     new Future.sync (dart:async/future.dart:224:31)
+#14     CommandRunner.run (package:args/command_runner.dart:111:11)
+#15     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:242:18)
+#16     run.<anonymous closure> (package:flutter_tools/runner.dart:60:20)
+<asynchronous suspension>
+#17     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#18     _rootRun (dart:async/zone.dart:1124:13)
+#19     _CustomZone.run (dart:async/zone.dart:1021:19)
+#20     _runZoned (dart:async/zone.dart:1516:10)
+#21     runZoned (dart:async/zone.dart:1463:12)
+#22     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#23     runInContext (package:flutter_tools/src/context_runner.dart:48:24)
+<asynchronous suspension>
+#24     run (package:flutter_tools/runner.dart:51:10)
+#25     main (package:flutter_tools/executable.dart:52:9)
+<asynchronous suspension>
+#26     main (file:///C:/flutter/packages/flutter_tools/bin/flutter_tools.dart:8:3)
+#27     _startIsolate.<anonymous closure> (dart:isolate/runtime/libisolate_patch.dart:298:32)
+#28     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:171:12)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, v1.2.1, on Microsoft Windows [versÃ£o 10.0.17134.1], locale pt-PT)
+    • Flutter version 1.2.1 at C:\flutter
+    • Framework revision 8661d8aecd (6 weeks ago), 2019-02-14 19:19:53 -0800
+    • Engine revision 3757390fa4
+    • Dart version 2.1.2 (build 2.1.2-dev.0.0 0a7dcf17eb)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 28.0.3)
+    • Android SDK at C:\Android\tools
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-28, build-tools 28.0.3
+    • ANDROID_HOME = C:\Android\tools
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 3.2)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 29.0.2
+    • Dart plugin version 181.5540.11
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
+
+[✓] VS Code, 64-bit edition (version 1.32.3)
+    • VS Code at C:\Program Files\Microsoft VS Code
+    • Flutter extension version 2.24.0
+
+[✓] Connected device (1 available)
+    • Android SDK built for x86 • emulator-5554 • android-x86 • Android 8.1.0 (API 27) (emulator)
+
+• No issues found!
+```
